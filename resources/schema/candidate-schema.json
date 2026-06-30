@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CandidateProfile",
+  "type": "object",
+  "properties": {
+    "candidate_id": { "type": "string" },
+    "full_name": { "type": "string" },
+    "emails": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "phones": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "location": { "type": ["string", "null"] },
+    "links": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "headline": { "type": ["string", "null"] },
+    "years_experience": { "type": ["number", "null"] },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" }
+        },
+        "required": ["name"]
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "company": { "type": "string" },
+          "startDate": { "type": "string" },
+          "endDate": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "degree": { "type": "string" },
+          "institution": { "type": "string" },
+          "fieldOfStudy": { "type": "string" },
+          "startDate": { "type": "string" },
+          "endDate": { "type": "string" }
+        }
+      }
+    },
+    "overall_confidence": { "type": ["number", "null"] },
+    "_confidence": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "_provenance": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "field": { "type": "string" },
+          "source": { "type": "string" },
+          "method": { "type": "string" }
+        },
+        "required": ["field", "source", "method"]
+      }
+    }
+  },
+  "required": ["candidate_id", "full_name"]
+}

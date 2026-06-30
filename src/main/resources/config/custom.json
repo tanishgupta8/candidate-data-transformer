@@ -1,0 +1,14 @@
+{
+  "fields": [
+    { "path": "id", "from": "candidate_id", "required": true },
+    { "path": "name", "from": "full_name", "required": true },
+    { "path": "primary_email", "from": "emails[0]" },
+    { "path": "primary_phone", "from": "phones[0]" },
+    { "path": "current_employer", "from": "experience[0].company" },
+    { "path": "current_title", "from": "experience[0].title" },
+    { "path": "years_experience", "from": "years_experience" }
+  ],
+  "include_confidence": true,
+  "include_provenance": false,
+  "on_missing": "omit"
+}
